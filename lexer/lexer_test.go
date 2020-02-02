@@ -13,14 +13,14 @@ func TestNextToken(t *testing.T) {
     expectedType    token.TokenType
     expectedLiteral string
   }{
-    { token.ASSIGN, "=" },
-    { token.PLUS,   "+" },
-    { token.LPAREN, "(" },
-    { token.RPAREN, ")" },
-    { token.LBRACE, "{" },
-    { token.RBRACE, "}" },
-    { token.COMMA,  "," },
-    { token.EOF,    ""  },
+    {token.ASSIGN, "="},
+    {token.PLUS,   "+"},
+    {token.LPAREN, "("},
+    {token.RPAREN, ")"},
+    {token.LBRACE, "{"},
+    {token.RBRACE, "}"},
+    {token.COMMA,  ","},
+    {token.EOF,    "" },
   }
 
   l := New(input)
