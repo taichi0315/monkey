@@ -10,11 +10,11 @@ func TestNextToken(t *testing.T) {
   input := `let five = 5;
 let ten = 10;
 
-let add = fn(x + y) {
+let add = fn(x , y) {
   x + y;
 };
 
-let result = add(five, ten);:w
+let result = add(five, ten);
 `
 
   tests := []struct {
@@ -44,6 +44,7 @@ let result = add(five, ten);:w
     {token.IDENT, "x"},
     {token.PLUS, "+"},
     {token.IDENT, "y"},
+    {token.SEMICOLON, ";"},
     {token.RBRACE, "}"},
     {token.SEMICOLON, ";"},
     {token.LET, "let"},
@@ -55,8 +56,8 @@ let result = add(five, ten);:w
     {token.COMMA, ","},
     {token.IDENT, "ten"},
     {token.RPAREN, ")"},
-    {token., ";"},
-    {token.SEMICOLON, ""},
+    {token.SEMICOLON, ";"},
+    {token.EOF, ""},
   }
 
   l := New(input)
