@@ -24,7 +24,7 @@ type Program struct {
 
 func (p *Program) TokenLiteral() string {
   if len(p.Statements) > 0 {
-    return p.Statements[0].TokenLeteral()
+    return p.Statements[0].TokenLiteral()
   } else {
     return ""
   }
@@ -32,7 +32,7 @@ func (p *Program) TokenLiteral() string {
 
 type LetStatement struct {
   Token token.Token
-  Name  *Indentifier
+  Name  *Identifier
   Value Expression
 }
 
